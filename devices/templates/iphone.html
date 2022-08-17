@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        select iphone model
+        </button>
+        {% for iphone in iphones %}
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">{{iphone.capacity}}</a>
+        <a class="dropdown-item" href="#">{{iphone.capacity}}</a>
+        <a class="dropdown-item" href="#">T-mobile</a>
+        <a class="dropdown-item" href="#">Unlocked</a>
+        </div>
+        {% endfor %}
+    </div>
+   
+    
+{% endblock %}
