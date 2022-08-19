@@ -22,7 +22,7 @@ class InquererListView(generics.ListCreateAPIView):
         username=created_object.firstName
         orderno=created_object.inqueryNo
         send_mail('Your inquery has been received with Case #{}'.format(orderno),'Hi {},\nCongratulations! your Inquery has been received successflly!\n\rPlease allow us 48 hour to address your query and return back to you\n\r'.format(username),'{}'.format(settings.EMAIL_HOST_USER),[created_object.email,], fail_silently=False,)
-
+        print(created_object.email+"hi")
 
 class GeneralInqueryListView(generics.ListCreateAPIView):
     permissions_class = [permissions.AllowAny]

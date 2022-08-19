@@ -192,8 +192,8 @@ UNAUTHENTICATED_TOKEN= 'null'
 
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT='587'
-EMAIL_HOST_USER='mefordevops@gmail.com'
-EMAIL_HOST_PASSWORD='fgoicupnjumhjxku'
+EMAIL_HOST_USER='cashmydevices@gmail.com'
+EMAIL_HOST_PASSWORD='kbyuusdswqildkjy'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/'

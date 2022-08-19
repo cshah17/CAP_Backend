@@ -16,6 +16,7 @@ from rest_framework import generics
 from rest_framework import permissions
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.generics import ListAPIView,RetrieveAPIView,CreateAPIView,DestroyAPIView,UpdateAPIView
+from django.contrib.sites.models import Site
 # Create your views here.
 
 
@@ -94,7 +95,8 @@ class UserTradeInfoList(generics.ListCreateAPIView):
         created_object=serializer.save(user=self.request.user)
         username=created_object.user
         orderno=created_object.orderNo
-        send_mail('Your order has been received with Order #{}'.format(orderno),'hi {},\nCongratulations! your order has been placed successflly'.format(username),'{}'.format(settings.EMAIL_HOST_USER),[created_object.user.email,], fail_silently=False,)
+        send_mail('Your order has been received with Order #{}'.format(orderno),'hi {}\nCongratulations! your order has been placed successfully!\n\r, Please follow the instruction on the below link to proceed further.\n\rhttp://'+Site.objects.get_current().domain+'/Support/CustomerSupport' .format(username),'{}'.format(settings.EMAIL_HOST_USER),[created_object.user.email,], fail_silently=False,)
+        
 
 class UserTradeInfoDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated,IsOwner]
